@@ -1,6 +1,6 @@
 module github.com/fun-dotto/api-template
 
-go 1.25.4
+go 1.25.6
 
 require (
 	cloud.google.com/go/cloudsqlconn v1.19.0
