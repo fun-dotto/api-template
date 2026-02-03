@@ -28,6 +28,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -tags timetzdata -o ./bin/main ./cmd/serve
 # Runtime stage
 FROM alpine:3
 
+ENV PORT=8080
+
 # Install runtime dependencies
 RUN apk add --no-cache ca-certificates
 
@@ -51,7 +53,7 @@ RUN chown -R appuser:appuser /app
 USER appuser
 
 # Expose port
-EXPOSE 8080
+EXPOSE $PORT
 
 # Run the application
 CMD ["/app/main"]
